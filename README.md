@@ -1,23 +1,29 @@
 # Currency Converter
-Microservice created for CS361. 
+
+Microservice created for CS361.
 Offers an endpoint to convert from a USD base to other currencies.
-Currency exchange rates are updated daily. 
+Currency exchange rates are updated daily.
 Rates are retrieved from Exchange Rate API (https://www.exchangerate-api.com).
 
 ## Table of Contents
+
 - [Installation](#installation)
 - [Usage](#usage)
+- [UML] (#uml)
 - [License](#license)
 
 ## Installation
+
 1. Clone the repository: `git clone https://github.com/isimonyu/currency_converter.git`
 2. Install dependencies: `npm install`
 3. Run the application: `npm start`
 
 The app should be running on `http://localhost:8888`
 
-## Usage 
+## Usage
+
 ### REQUESTING Data:
+
 - This app offers one endpoint at `http://localhost:8888/{SYMBOL}/{AMOUNT}`
   - {SYMBOL} and {AMOUNT} are parameters used to query for the conversion.
   - Enter the three letter symbol for the desired currency in place of {SYMBOL} (e.g. CAD, EUR, GBP).
@@ -25,30 +31,42 @@ The app should be running on `http://localhost:8888`
   - Example URL `https://localhost:8888/CAD/100`
 
 ### RECEIVING Data:
-- The response to endpoint at `http://localhost:8888/{SYMBOL}/{AMOUNT}` will include the conversion under the *data* attribute. 
+
+- The response to endpoint at `http://localhost:8888/{SYMBOL}/{AMOUNT}` will include the conversion under the _data_ attribute.
 - If your response variable is named 'response', the conversion will be 'response.data'
 - Example Reponse to URl `https://localhost:8888/CAD/100`:
   - response.data = 134.81 (Value will vary depending on the current exchange rate.)
 
 #### Example
+
 - This example uses Axios.js with Node to request a GET request to the app.
+
 1. Create a new directory and run `npm init` to initialize the directory.
 2. Then install Axios.js: run `npm install axios`
 3. Create a new file `app.js` and open it in code editor.
 4. At the top of `app.js` write
    ```javascript
    const axios = require("axios");
-6. Create an async function: `convert(symbol, amount)`
+   ```
+5. Create an async function: `convert(symbol, amount)`
    ```javascript
    async function convert(symbol, amount) {
-     const response = await axios.get(`http://localhost:8888/${symbol}/${amount}`)
-     return response.data
-   };
-7. In this function, symbol should be a string type and amount should be a float type.
-8. Try it out using console.log:
+     const response = await axios.get(
+       `http://localhost:8888/${symbol}/${amount}`
+     );
+     return response.data;
+   }
+   ```
+6. In this function, symbol should be a string type and amount should be a float type.
+7. Try it out using console.log:
    ```javascript
    console.log(convert("CAD", 100));
-  The console should display 134.81 (Value will vary depending on the current exchange rate.)
+   The console should display 134.81 (Value will vary depending on the current exchange rate.)
+   ```
+
+## UML
+
+![UML sequence diagram depicting the necessary calls for responses and requests.] (imgs/UML.png)
 
 ## License
 
@@ -73,4 +91,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
