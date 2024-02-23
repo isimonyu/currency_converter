@@ -45,7 +45,10 @@ The app should be running on `http://localhost:8888`
      return response.data
    };
 7. In this function, symbol should be a string type and amount should be a float type.
-8. `convert("CAD", 100)` Should return 134.81 (Value will vary depending on the current exchange rate.)
+8. Try it out using console.log:
+   ```javascript
+   console.log(convert("CAD", 100));
+  The console should display 134.81 (Value will vary depending on the current exchange rate.)
 
 ## License
 
