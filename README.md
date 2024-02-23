@@ -35,15 +35,17 @@ The app should be running on `http://localhost:8888`
 1. Create a new directory and run `npm init` to initialize the directory.
 2. Then install Axios.js: run `npm install axios`
 3. Create a new file `app.js` and open it in code editor.
-4. At the top of `app.js` write `const axios = require("axios");`
-5. Create an async function: `convert(symbol, amount)`
+4. At the top of `app.js` write
+   ```javascript
+   const axios = require("axios");
+6. Create an async function: `convert(symbol, amount)`
    ```javascript
    async function convert(symbol, amount) {
      const response = await axios.get(`http://localhost:8888/${symbol}/${amount}`)
      return response.data
    };
-6. In this function, symbol should be a string type and amount should be a float type.
-7. `convert("CAD", 100)` Should return 134.81 (Value will vary depending on the current exchange rate.)
+7. In this function, symbol should be a string type and amount should be a float type.
+8. `convert("CAD", 100)` Should return 134.81 (Value will vary depending on the current exchange rate.)
 
 ## License
 
