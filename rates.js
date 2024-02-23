@@ -1,7 +1,8 @@
 const axios = require("axios");
 
 let rates = [];
-// https://www.exchangerate-api.com/docs/free
+
+// Rates by Exchange Rate API https://www.exchangerate-api.com/docs/free
 async function getRates() {
   try {
     const response = await axios.get(`https://open.er-api.com/v6/latest/USD`);
