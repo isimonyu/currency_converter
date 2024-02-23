@@ -66,7 +66,7 @@ The app should be running on `http://localhost:8888`
 
 ## UML
 
-![UML sequence diagram depicting the necessary calls for responses and requests.] (imgs/UML.png)
+![UML sequence diagram depicting the necessary calls for responses and requests.](imgs/UML.png)
 
 ## License
 
