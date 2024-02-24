@@ -9,7 +9,7 @@ Rates are retrieved from Exchange Rate API (https://www.exchangerate-api.com).
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [UML] (#uml)
+- [UML](#uml)
 - [License](#license)
 
 ## Installation
